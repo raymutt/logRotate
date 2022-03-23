@@ -9,6 +9,11 @@ Param(
 [int]$archiveAge  
 )
 
+if ($archiveAge -le $fileAge){
+    return 'Archives for deletion must be older than the files being archived'
+    break
+}
+
 $logFiles = Get-ChildItem $logFolder -Filter $filterPattern | Where-Object {$_.LastWriteTime -lt (Get-Date).AddDays(-1 * $fileAge)}
 $dateString = Get-Date -format "yyyy-MM-dd-HH:mm"
 $destinationPath = $logFolder + '\' + $dateString + ".zip"
