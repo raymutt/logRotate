@@ -15,7 +15,7 @@ if ($archiveAge -le $fileAge){
 }
 
 $logFiles = Get-ChildItem $logFolder -Filter $filterPattern | Where-Object {$_.LastWriteTime -lt (Get-Date).AddDays(-1 * $fileAge)}
-$dateString = Get-Date -format "yyyy-MM-dd-HH:mm"
+$dateString = Get-Date -format "yyyy-MM-dd"
 $destinationPath = $logFolder + '\' + $dateString + ".zip"
 
 ## archive $logFiles in $logFolder older than $fileAge (in days)
@@ -26,9 +26,9 @@ function Push-ArchiveFiles {
     } else {
     foreach($logFile in $logFiles){ 
         $logFilePaths += ($logFile.FullName)
-        Compress-Archive -Path $logFilePaths -DestinationPath $destinationPath -CompressionLevel Optimal  
-        Remove-Item -path $logFilePaths  
-        }
+    }
+    Compress-Archive -Path $logFilePaths -DestinationPath $destinationPath -CompressionLevel Optimal  
+    Remove-Item -path $logFilePaths
     }
 }
 
