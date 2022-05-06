@@ -24,9 +24,9 @@ function Push-ArchiveFiles {
     if ($logFiles.count -eq 0){
         return 'No files to archive. No files old enough, or pattern not found: ' + $filterPattern + '. Moving on...'
     } else {
-    foreach($logFile in $logFiles){ 
-        $logFilePaths += ($logFile.FullName)
-    }
+        foreach($logFile in $logFiles){ 
+            $logFilePaths += ($logFile.FullName)
+        }
     Compress-Archive -Path $logFilePaths -DestinationPath $destinationPath -CompressionLevel Optimal  
     Remove-Item -path $logFilePaths
     }
@@ -41,8 +41,8 @@ function Remove-ArchiveFiles {
     if ($archiveFiles.count -eq 0){
         return 'No archives to remove, all done!'
     } else {
-    foreach($archiveFile in $archiveFiles){
-        Remove-Item -path $archiveFile.FullName
+        foreach($archiveFile in $archiveFiles){
+            Remove-Item -path $archiveFile.FullName
         }
     }
 }
