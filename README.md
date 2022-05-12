@@ -5,12 +5,11 @@ Powershell script for rotating log files. As written, can be run only once daily
 
 Note: If you do not provide input paramaters, you will be prompted to do so. They are:
 
-```
--logFolder ## path to log folder
--filterPattern ## string for filtering. Must use a wildcard character, '*' to obtain all instances (ex. '*.log' or 'Log_*')
--fileAge ## in days
--archiveAge ## in days
-```
+- `-logFolder`: path to log folder
+- `filterPattern`: string for filtering. 
+  - Must use a wildcard character, `*` to obtain all instances (ex. `*.log` or `Log_*`)
+- `fileAge`: in days
+- `archiveAge`: in days
 
 1. Run directly from Powershell terminal:
 
