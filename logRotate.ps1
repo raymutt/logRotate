@@ -27,8 +27,8 @@ function Push-ArchiveFiles {
         foreach($logFile in $logFiles){ 
             $logFilePaths += ($logFile.FullName)
         }
-    Compress-Archive -Path $logFilePaths -DestinationPath $destinationPath -CompressionLevel Optimal  
-    Remove-Item -path $logFilePaths
+        Compress-Archive -Path $logFilePaths -DestinationPath $destinationPath -CompressionLevel Optimal  
+        Remove-Item -path $logFilePaths
     }
 }
 
