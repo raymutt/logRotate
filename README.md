@@ -7,7 +7,7 @@ Note: If you do not provide input paramaters, you will be prompted to do so. The
 
 ```
 -logFolder ## path to log folder
--filterPattern ## string for filtering. Must use a wildcard character, '*' to obtain all instances
+-filterPattern ## string for filtering. Must use a wildcard character, '*' to obtain all instances (ex. '*.log' or 'Log_*')
 -fileAge ## in days
 -archiveAge ## in days
 ```
