@@ -1,5 +1,5 @@
 # logRotate
-Powershell script for rotating log files. As written, can be run only once daily.
+Powershell script for rotating log files. As written, can be run a maximum of only once daily. If you want to rotate logs more frequently, you'll need to adjust the granularity of `$dateString`.
 
 ## How to Use:
 
